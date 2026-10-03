@@ -18,53 +18,55 @@ function useIsMobile() {
 }
 
 const SKILLS = [
-  { name: "React.js", level: 90, color: "#61DAFB" },
-  { name: "JavaScript", level: 88, color: "#F7DF1E" },
-  { name: "Tailwind CSS", level: 85, color: "#38BDF8" },
-  { name: "HTML & CSS", level: 90, color: "#E34F26" },
+  { name: "Python", level: 90, color: "#3776AB" },
+  { name: "PyTorch", level: 82, color: "#EE4C2C" },
+  { name: "Machine Learning", level: 85, color: "#38BDF8" },
+  { name: "Federated Learning", level: 80, color: "#A78BFA" },
+  { name: "React.js", level: 82, color: "#61DAFB" },
   { name: "Node.js", level: 75, color: "#68A063" },
-  { name: "Express.js", level: 72, color: "#ffffff" },
   { name: "MongoDB", level: 70, color: "#4DB33D" },
-  { name: "Python (ML)", level: 65, color: "#3776AB" },
+  { name: "SQL", level: 75, color: "#F59E0B" },
 ];
 
 const PROJECTS = [
   {
-    title: "MediTrack",
-    desc: "A full-stack healthcare web application for managing medical consultations and secure e-prescriptions with role-based dashboards for doctors, patients, and administrators.",
-    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
+    title: "ICU Mortality Prediction Dashboard",
+    desc: "A deployed Streamlit application for ICU mortality risk prediction using a trained BiLSTM model, with LIME-based explanations and federated training analytics.",
+    tags: ["Python", "PyTorch", "Streamlit", "LIME", "Plotly"],
     color: "#38BDF8",
-    icon: "⚕",
-    link: "https://github.com/shahriar2711/MediTrack",
+    icon: "🫀",
+    link: "https://github.com/shahriar2711/icu-mortality-dashboard",
+    demo: "https://icu-mortality-dashboard-9hcngbceubtej2dizahnxa.streamlit.app/",
     year: "2026",
   },
   {
-    title: "Study Plan",
-    desc: "A productivity web app that helps students manage study schedules, track tasks by semester, and monitor academic progress through personalized dashboards.",
-    tags: ["React.js", "MongoDB", "Express.js", "Firebase", "JWT"],
-    color: "#a78bfa",
+    title: "LLM Resume Evaluator",
+    desc: "An LLM-powered resume screening tool that evaluates candidate resumes against job descriptions using structured extraction and semantic matching.",
+    tags: ["Python", "Groq API", "Pydantic", "LLMs"],
+    color: "#A78BFA",
+    icon: "📄",
+    link: "https://github.com/shahriar2711/llm-resume-evaluator",
+    year: "2026",
+  },
+  {
+    title: "MediTrack",
+    desc: "A full-stack healthcare platform with role-based dashboards, secure authentication, digital consultations, e-prescriptions, and patient history management.",
+    tags: ["React.js", "Node.js", "MongoDB", "JWT"],
+    color: "#22C55E",
+    icon: "⚕",
+    link: "https://github.com/shahriar2711/MediTrack",
+    demo: "https://medi-track-pfqxu23p7-shahriar2711s-projects.vercel.app/",
+    year: "2026",
+  },
+  {
+    title: "StudyPlan",
+    desc: "A MERN-based study management platform for organizing academic tasks, schedules, deadlines, and semester-wise progress.",
+    tags: ["React.js", "Node.js", "MongoDB", "Firebase"],
+    color: "#F59E0B",
     icon: "📚",
     link: "https://github.com/shahriar2711/Study-plan",
     year: "2025",
   },
-  {
-    title: "Dice Game",
-    desc: "A simple interactive browser game built with JavaScript where users roll dice to compete, demonstrating DOM manipulation and event-driven logic.",
-    tags: ["JavaScript", "HTML", "CSS"],
-    color: "#f59e0b",
-    icon: "🎲",
-    link: "https://github.com/shahriar2711/Dice-game",
-    year: "2024",
-  },
-  {
-    title: "TextUtils",
-    desc: "A text utility web application for formatting, transforming, and analyzing text in real-time with features like case conversion and word count.",
-    tags: ["React.js", "JavaScript", "CSS"],
-    color: "#22c55e",
-    icon: "📝",
-    link: "https://github.com/shahriar2711/TextUtils",
-    year: "2024",
-  }
 ];
 
 const EXPERIENCE = [
@@ -230,18 +232,6 @@ function Navbar() {
             </a>
           );
         })}
-
-        {/* Resume Button */}
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
-          href="/public/Atiq_Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-2 border border-primary text-primary text-xs uppercase tracking-widest rounded-md font-semibold hover:bg-primary hover:text-black transition"
-        >
-          Resume ↗
-        </motion.a>
       </div>
 
       {/* Mobile Menu Placeholder */}
@@ -265,16 +255,6 @@ function Navbar() {
             </a>
           ))}
 
-          {/* Resume Button (Mobile) */}
-          <a
-            href="/Atiq_Shahriar_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMenuOpen(false)}
-            className="mt-2 px-4 py-2 border border-primary text-primary text-xs uppercase tracking-widest rounded-md font-semibold"
-          >
-            Resume ↗
-          </a>
         </div>
       )}
     </motion.nav>
@@ -289,8 +269,8 @@ function Hero() {
 
   const roles = [
     "Frontend Developer",
-    "React Developer",
-    "AI & ML Enthusiast",
+    "AI Engineering Enthusiast",
+    "AI/ML Researcher",
     "Problem Solver"
   ];
 
@@ -409,8 +389,10 @@ function Hero() {
             marginTop: 24,
           }}
         >
-          I build responsive and user-friendly web applications using React and modern JavaScript technologies.
-          Alongside frontend development, I explore machine learning, federated learning, and explainable AI to create impactful solutions—especially in healthcare systems.
+          I build AI-driven and software systems that connect machine learning research
+with practical applications. My interests include federated learning, NLP,
+LLMs, explainable AI, and full-stack development, with a focus on building
+useful and deployable solutions.
         </motion.p>
 
         {/* Buttons */}
@@ -596,7 +578,7 @@ function Skills() {
       <SectionHeader
         label="02. Skills"
         title="Technical Expertise"
-        subtitle="Technologies I use to build modern web and AI-driven applications."
+        subtitle="Tools and technologies I use across AI, research, and software development."
       />
 
       {/* Skill Bars */}
@@ -621,41 +603,45 @@ function Skills() {
       </div>
 
       {/* 🔹 Tech Tags (Reduced + Cleaner) */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ delay: 0.8 }}
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 12,
-          marginTop: 80,
-        }}
-      >
-        {[
-          "Git",
-          "Firebase",
-          "JWT",
-          "Machine Learning",
-          "Explainable AI",
-          "Federated Learning",
-        ].map((t) => (
-          <span
-            key={t}
-            style={{
-              padding: "8px 16px",
-              borderRadius: 6,
-              border: "1px solid rgba(56,189,248,0.15)",
-              color: "rgba(255,255,255,0.55)",
-              fontSize: 12,
-              letterSpacing: 1,
-              fontFamily: "'Courier New', monospace",
-            }}
-          >
-            {t}
-          </span>
-        ))}
-      </motion.div>
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={inView ? { opacity: 1, y: 0 } : {}}
+  transition={{ delay: 0.8 }}
+  style={{
+    display: "flex",
+    flexWrap: "wrap",
+    gap: 12,
+    marginTop: 80,
+  }}
+>
+  {[
+    "PyTorch",
+    "Transformers",
+    "Explainable AI",
+    "LLMs",
+    "FastAPI",
+    "Streamlit",
+    "Git",
+    "Firebase",
+    "JWT",
+  ].map((t) => (
+    <span
+      key={t}
+      style={{
+        padding: "8px 16px",
+        borderRadius: 6,
+        border: "1px solid rgba(56,189,248,0.15)",
+        color: "rgba(255,255,255,0.55)",
+        fontSize: 12,
+        letterSpacing: 1,
+        fontFamily: "'Courier New', monospace",
+        whiteSpace: "nowrap",
+      }}
+    >
+      {t}
+    </span>
+  ))}
+</motion.div>
 
       {/* 🔥 Problem Solving (Upgraded Visual) */}
       <motion.div
@@ -867,6 +853,68 @@ function ProjectCard({ project, index }) {
         {project.desc}
       </p>
 
+      {/* Project Links */}
+{(project.link || project.demo) && (
+  <div
+    style={{
+      display: "flex",
+      gap: 10,
+      marginBottom: 24,
+      flexWrap: "wrap",
+    }}
+  >
+    {project.link && (
+      <a
+        href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 6,
+          padding: "7px 12px",
+          borderRadius: 5,
+          border: "1px solid rgba(255,255,255,0.12)",
+          color: "rgba(255,255,255,0.65)",
+          fontSize: 11,
+          letterSpacing: 1,
+          textDecoration: "none",
+          fontFamily: "'Courier New', monospace",
+          transition: "all 0.2s",
+        }}
+      >
+        GitHub ↗
+      </a>
+    )}
+
+    {project.demo && (
+      <a
+        href={project.demo}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 6,
+          padding: "7px 12px",
+          borderRadius: 5,
+          border: `1px solid ${project.color}40`,
+          color: project.color,
+          fontSize: 11,
+          letterSpacing: 1,
+          textDecoration: "none",
+          fontFamily: "'Courier New', monospace",
+          transition: "all 0.2s",
+        }}
+      >
+        Live Demo ↗
+      </a>
+    )}
+  </div>
+)}
+
       {/* Tags */}
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
         {project.tags.map((tag) => (
@@ -908,7 +956,11 @@ function Projects() {
   const isMobile = useIsMobile();
   return (
     <section id="projects" style={{ padding: isMobile ? "80px 1.5rem" : "120px 3rem", maxWidth: 1200, margin: "0 auto" }}>
-      <SectionHeader label="03. Projects" title="Selected Work" subtitle="Things I've built that I'm proud of." />
+      <SectionHeader
+  label="03. Projects"
+  title="Selected Work"
+  subtitle="AI, research, and software projects I've built and deployed."
+/>
       <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gap: 24, marginTop: 60 }}>
         {PROJECTS.map((p, i) => <ProjectCard key={p.title} project={p} index={i} />)}
       </div>
@@ -922,7 +974,11 @@ function Experience() {
   const isMobile = useIsMobile();
   return (
     <section id="experience" ref={ref} style={{ padding: isMobile ? "80px 1.5rem" : "120px 3rem", maxWidth: 1200, margin: "0 auto" }}>
-      <SectionHeader label="04. Experience" title="Where I've Worked" subtitle="My professional journey so far." />
+      <SectionHeader
+    label="05. Experience"
+    title="Experience"
+    subtitle="Professional, leadership, and technical involvement."
+  />
       <div style={{ marginTop: 60, position: "relative" }}>
         <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 1, background: "linear-gradient(to bottom, #38BDF8, transparent)" }} />
         {EXPERIENCE.map((exp, i) => (
@@ -1030,7 +1086,7 @@ function Contact() {
           {[
             ["Email", "atiqshahriar2001@gmail.com"],
             ["Location", "Chittagong, Bangladesh"],
-            ["Availability", "Open to internships & junior roles"],
+            ["Availability", "Open to AI/ML, Software Engineering & Research Opportunities"],
           ].map(([k, v]) => (
             <div
               key={k}
