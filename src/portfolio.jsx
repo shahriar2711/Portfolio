@@ -30,6 +30,23 @@ const SKILLS = [
 
 const PROJECTS = [
   {
+    title: "AI Portfolio Chatbot",
+    desc: "An AI-powered version of me that lets recruiters explore my background through conversational, resume-grounded answers. Features streaming responses, conversation memory, job-description matching, and PDF resume parsing.",
+    tags: [
+      "Python",
+      "FastAPI",
+      "React",
+      "Tailwind CSS",
+      "Groq API",
+      "Pydantic",
+    ],
+    color: "#A78BFA",
+    icon: "🤖",
+    link: "https://github.com/shahriar2711/Portfolio-AI",
+    demo: "https://portfolio-ai-mocha-two.vercel.app/",
+    year: "2026",
+  },
+  {
     title: "ICU Mortality Prediction Dashboard",
     desc: "A deployed Streamlit application for ICU mortality risk prediction using a trained BiLSTM model, with LIME-based explanations and federated training analytics.",
     tags: ["Python", "PyTorch", "Streamlit", "LIME", "Plotly"],
@@ -390,9 +407,9 @@ function Hero() {
           }}
         >
           I build AI-driven and software systems that connect machine learning research
-with practical applications. My interests include federated learning, NLP,
-LLMs, explainable AI, and full-stack development, with a focus on building
-useful and deployable solutions.
+          with practical applications. My interests include federated learning, NLP,
+          LLMs, explainable AI, and full-stack development, with a focus on building
+          useful and deployable solutions.
         </motion.p>
 
         {/* Buttons */}
@@ -603,45 +620,45 @@ function Skills() {
       </div>
 
       {/* 🔹 Tech Tags (Reduced + Cleaner) */}
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={inView ? { opacity: 1, y: 0 } : {}}
-  transition={{ delay: 0.8 }}
-  style={{
-    display: "flex",
-    flexWrap: "wrap",
-    gap: 12,
-    marginTop: 80,
-  }}
->
-  {[
-    "PyTorch",
-    "Transformers",
-    "Explainable AI",
-    "LLMs",
-    "FastAPI",
-    "Streamlit",
-    "Git",
-    "Firebase",
-    "JWT",
-  ].map((t) => (
-    <span
-      key={t}
-      style={{
-        padding: "8px 16px",
-        borderRadius: 6,
-        border: "1px solid rgba(56,189,248,0.15)",
-        color: "rgba(255,255,255,0.55)",
-        fontSize: 12,
-        letterSpacing: 1,
-        fontFamily: "'Courier New', monospace",
-        whiteSpace: "nowrap",
-      }}
-    >
-      {t}
-    </span>
-  ))}
-</motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: 0.8 }}
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: 12,
+          marginTop: 80,
+        }}
+      >
+        {[
+          "PyTorch",
+          "Transformers",
+          "Explainable AI",
+          "LLMs",
+          "FastAPI",
+          "Streamlit",
+          "Git",
+          "Firebase",
+          "JWT",
+        ].map((t) => (
+          <span
+            key={t}
+            style={{
+              padding: "8px 16px",
+              borderRadius: 6,
+              border: "1px solid rgba(56,189,248,0.15)",
+              color: "rgba(255,255,255,0.55)",
+              fontSize: 12,
+              letterSpacing: 1,
+              fontFamily: "'Courier New', monospace",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {t}
+          </span>
+        ))}
+      </motion.div>
 
       {/* 🔥 Problem Solving (Upgraded Visual) */}
       <motion.div
@@ -854,66 +871,66 @@ function ProjectCard({ project, index }) {
       </p>
 
       {/* Project Links */}
-{(project.link || project.demo) && (
-  <div
-    style={{
-      display: "flex",
-      gap: 10,
-      marginBottom: 24,
-      flexWrap: "wrap",
-    }}
-  >
-    {project.link && (
-      <a
-        href={project.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={(e) => e.stopPropagation()}
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 6,
-          padding: "7px 12px",
-          borderRadius: 5,
-          border: "1px solid rgba(255,255,255,0.12)",
-          color: "rgba(255,255,255,0.65)",
-          fontSize: 11,
-          letterSpacing: 1,
-          textDecoration: "none",
-          fontFamily: "'Courier New', monospace",
-          transition: "all 0.2s",
-        }}
-      >
-        GitHub ↗
-      </a>
-    )}
+      {(project.link || project.demo) && (
+        <div
+          style={{
+            display: "flex",
+            gap: 10,
+            marginBottom: 24,
+            flexWrap: "wrap",
+          }}
+        >
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 6,
+                padding: "7px 12px",
+                borderRadius: 5,
+                border: "1px solid rgba(255,255,255,0.12)",
+                color: "rgba(255,255,255,0.65)",
+                fontSize: 11,
+                letterSpacing: 1,
+                textDecoration: "none",
+                fontFamily: "'Courier New', monospace",
+                transition: "all 0.2s",
+              }}
+            >
+              GitHub ↗
+            </a>
+          )}
 
-    {project.demo && (
-      <a
-        href={project.demo}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={(e) => e.stopPropagation()}
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 6,
-          padding: "7px 12px",
-          borderRadius: 5,
-          border: `1px solid ${project.color}40`,
-          color: project.color,
-          fontSize: 11,
-          letterSpacing: 1,
-          textDecoration: "none",
-          fontFamily: "'Courier New', monospace",
-          transition: "all 0.2s",
-        }}
-      >
-        Live Demo ↗
-      </a>
-    )}
-  </div>
-)}
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 6,
+                padding: "7px 12px",
+                borderRadius: 5,
+                border: `1px solid ${project.color}40`,
+                color: project.color,
+                fontSize: 11,
+                letterSpacing: 1,
+                textDecoration: "none",
+                fontFamily: "'Courier New', monospace",
+                transition: "all 0.2s",
+              }}
+            >
+              Live Demo ↗
+            </a>
+          )}
+        </div>
+      )}
 
       {/* Tags */}
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
@@ -957,10 +974,10 @@ function Projects() {
   return (
     <section id="projects" style={{ padding: isMobile ? "80px 1.5rem" : "120px 3rem", maxWidth: 1200, margin: "0 auto" }}>
       <SectionHeader
-  label="03. Projects"
-  title="Selected Work"
-  subtitle="AI, research, and software projects I've built and deployed."
-/>
+        label="03. Projects"
+        title="Selected Work"
+        subtitle="AI, research, and software projects I've built and deployed."
+      />
       <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gap: 24, marginTop: 60 }}>
         {PROJECTS.map((p, i) => <ProjectCard key={p.title} project={p} index={i} />)}
       </div>
@@ -975,10 +992,10 @@ function Experience() {
   return (
     <section id="experience" ref={ref} style={{ padding: isMobile ? "80px 1.5rem" : "120px 3rem", maxWidth: 1200, margin: "0 auto" }}>
       <SectionHeader
-    label="05. Experience"
-    title="Experience"
-    subtitle="Professional, leadership, and technical involvement."
-  />
+        label="05. Experience"
+        title="Experience"
+        subtitle="Professional, leadership, and technical involvement."
+      />
       <div style={{ marginTop: 60, position: "relative" }}>
         <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 1, background: "linear-gradient(to bottom, #38BDF8, transparent)" }} />
         {EXPERIENCE.map((exp, i) => (
